@@ -1,0 +1,54 @@
+@import 'styles/imports';
+@import '@mdi/font/css/materialdesignicons.min.css';
+
+/* You can add global styles to this file, and also import other style files */
+html {
+    font-family: Lato;
+    background: #2b2827;
+    color: $dark-grey;
+}
+
+body {
+    margin:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $light-grey;
+  letter-spacing: 0em;
+}
+
+.text-primary {
+    color: $rgpink;
+}
+
+a {
+    color: $light-grey;
+}
+
+button {
+    border: 0;
+    border-radius: 5px;
+    background: $rgpink;
+    color: $light-grey;
+
+    font-weight: 700;
+
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  
+    cursor: pointer;
+
+    &.btn-alt {
+        box-sizing: border-box;
+        border: 1px solid $rgpink;
+        color: $rgpink;
+        background: transparent;
+    }
+}

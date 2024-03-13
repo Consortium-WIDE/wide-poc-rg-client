@@ -1,0 +1,17 @@
+@import 'imports';
+
+.content.base {
+    height: 100vh;
+    text-align: center;
+
+    .wide-logo {
+        position: fixed;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 25px;
+        width: 100%;
+        padding-top: 25px;
+        color: #2b2827;
+    }
+}
