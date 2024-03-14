@@ -1,0 +1,46 @@
+@import 'imports';
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .checkmark {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: transparent;
+        border: 1px solid $light-grey;
+        border-radius: 2px;
+        margin-right: 8px;
+
+        &.checked {
+            background-color: $rgpink;
+            border-color: $rgpink;
+        }
+    }
+
+    .checkbox-label {
+        line-height: 14px;
+    }
+
+    &.label-left {
+        .checkbox-label {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+
+        .checkmark {
+            order: 1;
+            /* Moves the checkmark to the right of the label */
+        }
+    }
+
+    &.label-right {
+        .checkmark {
+            order: -1;
+            /* Keeps the checkmark to the left of the label */
+        }
+    }
+
+}
