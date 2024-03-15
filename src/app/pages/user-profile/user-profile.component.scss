@@ -1,0 +1,31 @@
+.content {
+    display: flex;
+    align-items: center;
+
+    margin-top: 20px;
+
+    .panel {
+        width: 50vw;
+
+        .content-message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 15%;
+            margin-right: 15%;
+
+            h2 {
+                margin-top:0;
+            }
+
+            .icon {
+                font-size: 28px;
+            }
+
+            .text {
+                margin-left: 15px;
+            }
+        }
+    }
+}

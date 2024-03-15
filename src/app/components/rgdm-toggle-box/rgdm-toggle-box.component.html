@@ -1,0 +1,6 @@
+<label class="custom-toggle-box" [ngClass]="{'label-right': labelPosition === 'right', 'label-left': labelPosition === 'left'}" (click)="toggleCheckbox()">
+    <span class="toggle-wrapper">
+        <span class="checkmark" [class.checked]="checked"></span>
+    </span>
+    <span class="toggle-box-label">{{label}}</span>
+</label>

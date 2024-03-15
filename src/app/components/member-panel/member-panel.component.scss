@@ -1,0 +1,78 @@
+@import 'imports';
+
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .member-panel {
+        width: 410px;
+        padding: 25px;
+        background: $black;
+        border: 1px solid $dark-grey;
+        border-radius: 5px;
+
+        .header {
+            display: flex;
+            align-items: center;
+        
+            h1,
+            h2,
+            h3 {
+                margin: 0;
+            }
+
+            i.mdi {
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .toggle-box {
+                margin-left: auto;
+            }
+        }
+
+        .bio {
+            margin-top: 20px;
+            min-height: 80px;
+
+            .label {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                i.mdi {
+                    margin-left: auto;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .item {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            line-height: 30px;
+
+            &.icon-item {
+                i.icon {
+                    img {
+                        vertical-align: middle;
+                    }
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed $rgpink;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+}

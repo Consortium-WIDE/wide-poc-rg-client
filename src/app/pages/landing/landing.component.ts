@@ -26,7 +26,7 @@ export class LandingComponent implements OnInit {
         this.userId = status.userId;
 
         if (this.userId) {
-          this.router.navigateByUrl('/user', { state: { userId: this.userId } });
+          this.router.navigateByUrl('/profile', { state: { userId: this.userId } });
         }
       }
     });

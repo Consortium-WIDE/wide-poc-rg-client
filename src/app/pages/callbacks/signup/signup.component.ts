@@ -100,7 +100,7 @@ export class SignupComponent implements OnInit {
 
             this.raidGuildDataService.setAuthStatus(payload.data.id);
 
-            this.router.navigateByUrl('/user', { state: { userId: payload.data.id } });
+            this.router.navigateByUrl('/profile', { state: { userId: payload.data.id } });
           }
 
           if (event.data.status === 'already_exists') {

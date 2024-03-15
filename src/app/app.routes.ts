@@ -6,6 +6,13 @@ import { ErrorComponent } from './pages/error/error.component';
 import { SignupComponent } from './pages/callbacks/signup/signup.component';
 import { SigninComponent } from './pages/callbacks/signin/signin.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { MenuItem } from './services/menu.service';
+
+const menuItems: MenuItem[] = [
+    { title: 'My Profile', path: '/profile'},
+    { title: 'Raids', path: '/raids'},
+    { title: 'Members', path: '/members'},
+]
 
 export const routes: Routes = [
     {
@@ -20,9 +27,13 @@ export const routes: Routes = [
     {
         path: '',
         component: MainLayoutComponent,
+        data: {
+            showTopMenu: true,
+            menuItems: menuItems
+        },
         children: [
-            { path: 'user', component: UserProfileComponent },
+            { path: 'profile', component: UserProfileComponent },
             { path: '**', component: ErrorComponent },
         ]
-    },
+    }
 ];

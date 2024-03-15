@@ -1,0 +1,43 @@
+<div class="profile-wrapper">
+    <div class="member-panel">
+        <div class="header">
+            <h2>Member Name <i (click)="editMember()" class="mdi mdi-pencil-outline text-primary"></i></h2>
+            <div class="toggle-box">
+                <app-rgdm-toggle-box [(checked)]="isRaiding" [label]="isRaiding ? 'Raiding' : 'Not Raiding'" labelPosition="left"></app-rgdm-toggle-box>
+            </div>
+        </div>
+        <div class="bio">
+            <div class="label">
+                <p>Add some information about yourself here.</p>
+                <i (click)="editBio()" class="mdi mdi-pencil-outline text-primary"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="item role">
+            <b>Member Role:</b> No Role
+        </div>
+        <div class="item skills">
+            <b>Skills:</b> No skills indicated
+        </div>
+        <hr />
+        <div class="item icon-item discord">
+            <i class="icon"><img src="assets/svg/icons/discord.svg" /></i>
+            <span class="value">No handle</span>
+        </div>
+        <div class="item icon-item github">
+            <i class="icon"><img src="assets/svg/icons/github.svg" /></i>
+            <span class="value">No handle</span>
+        </div>
+        <div class="item icon-item telegram">
+            <i class="icon"><img src="assets/svg/icons/telegram.svg" /></i>
+            <span class="value">No handle</span>
+        </div>
+        <div class="item icon-item mail">
+            <i class="icon"><img src="assets/svg/icons/email-outline.svg" /></i>
+            <span class="value">No handle</span>
+        </div>
+    </div>
+    <div class="buttons">
+        <button (click)="editProfile()">Edit your profile</button>
+    </div>
+</div>

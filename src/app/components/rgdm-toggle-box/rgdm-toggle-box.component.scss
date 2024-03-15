@@ -1,0 +1,57 @@
+@import 'imports';
+
+.custom-toggle-box {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .toggle-wrapper {
+        height: 26px;
+        width: 47px;
+        background: $dark-grey;
+        border-radius: 25px;
+        display: inline-block;
+        position: relative;
+
+        .checkmark {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: $light-grey;
+            border-radius: 25px;
+            position: absolute;
+            top: 3px;
+            left: 5px;
+            transition: left 0.3s ease, right 0.3s ease, background-color 0.3s ease; // Add transition
+            
+            &.checked {
+                background: $rgpink;
+                left: 21px;
+            }
+        }
+    }
+
+    .toggle-box-label {
+        line-height: 14px;
+    }
+
+    &.label-left {
+        .toggle-box-label {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+
+        .toggle-wrapper {
+            order: 1;
+            /* Moves the checkmark to the right of the label */
+        }
+    }
+
+    &.label-right {
+        .toggle-wrapper {
+            order: -1;
+            /* Keeps the checkmark to the left of the label */
+        }
+    }
+
+}
