@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="form-input col-2">
-                <div class="form-input-sub w-70">
+                <div class="form-input-sub w-60">
                     <app-rgdm-input id="discordHandle" [disabled]="true" name="discordHandle" label="Discord" [(ngModel)]="profile.discord" iconUrl="assets/svg/icons/discord.svg"></app-rgdm-input>
                 </div>
                 <div class="form-input-sub">
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="form-input col-2">
-                <div class="form-input-sub w-70">
+                <div class="form-input-sub w-60">
                     <app-rgdm-input id="email" [disabled]="true"  name="email" label="Email" [(ngModel)]="profile.email" iconUrl="assets/svg/icons/email-outline.svg"></app-rgdm-input>
                 </div>
                 <div class="form-input-sub">
@@ -49,7 +49,7 @@
         </div>
         <div class="buttons">
             <button class="btn-alt" (click)="updateProfile()">Update Profile</button>
-            <button class="btn-alt no-border" (click)="reject()">Reject</button>
+            <button class="btn-alt no-border" (click)="reject()">Cancel</button>
         </div>
     </form>
 </div>
