@@ -32,8 +32,8 @@ export class SignupComponent implements OnInit {
         let payload: any =
         {
           issuer: {
-            label: 'Raid Guild Membership',
-            type: ["Raid Guild Membership"],
+            label: 'Raid Guild Dungeon Master Membership',
+            type: ["Raid Guild Dungeon Master Membership"],
             issuer: environment.hostUri,
             credentialSubject: {
               id: this.retrievedPresentation.data.credentialSubject.id,
