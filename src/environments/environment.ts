@@ -33,7 +33,7 @@ export const environment = {
             "iconUri": "https://dungeonmaster.wid3-demo.app/assets/icon.png",
             "requireMessageSignature": true,
             "credential": {
-                "type": ["Raid Guild Membership"],
+                "type": ["Raid Guild Dungeon Master Membership"],
             }
         }
     },
