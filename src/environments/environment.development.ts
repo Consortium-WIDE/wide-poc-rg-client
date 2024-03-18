@@ -33,7 +33,7 @@ export const environment = {
             "iconUri": "http://localhost:4500/assets/icon.png",
             "requireMessageSignature": true,
             "credential": {
-                "type": ["Raid Guild Membership"],
+                "type": ["Raid Guild Dungeon Master Membership"],
             }
         }
     },
