@@ -1,0 +1,33 @@
+@import 'imports';
+
+.top-level-menu {
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 150px;
+        color: $light-grey;
+
+        li {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 22px;
+
+            a {
+                text-decoration: none;
+
+                &.active {
+
+                    &::after {
+                        content: ' ';
+                        border-bottom: 1px solid $rgpink;
+                        width: 90%;
+                        height: 8px;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+    }
+}

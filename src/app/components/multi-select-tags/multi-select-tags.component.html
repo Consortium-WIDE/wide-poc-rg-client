@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="multi-select-tags">
+        <input type="text" [(ngModel)]="currentInput" (input)="onInput($event.target)" (click)="showAll()" placeholder="Start typing to filter..." />
+        <ul *ngIf="filteredTags.length > 0" class="filtered-tags">
+            <li *ngFor="let tag of filteredTags" (click)="onSelectTag(tag)">
+                {{ tag }}
+            </li>
+        </ul>
+    </div>
+    <div class="selected-tags">
+        <span (click)="onRemoveTag(tag)" *ngFor="let tag of selectedTags" class="tag">
+            {{ tag }}
+        </span>
+    </div>
+</div>

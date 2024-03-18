@@ -1,0 +1,153 @@
+@import '_imports';
+
+.rgdm-input {
+    position: relative;
+
+    .input-icon {
+        position: absolute;
+        left: 0;
+        top: 55%;
+        transform: translateY(-55%);
+        height: 20px; // Adjust as necessary
+        width: 20px; // Adjust as necessary
+        margin-left: 15px; // Adjust spacing as needed
+    }
+
+    input.with-icon {
+        padding-top: 8px;
+        padding-left: 45px; // Adjust padding to make space for the SVG icon
+    }
+
+    .label-icon-padding {
+        padding-left: 25px; // Adjust this value based on the size of your icon
+
+        &.hasvalue {
+            left: 0;
+        }
+    }
+
+    span.label {
+        position: absolute;
+        left: 15px;
+        font-size: 16px;
+        top: 14px;
+        opacity: 1;
+        transition: all 0.2s ease;
+    }
+
+    &.inline {
+        display: inline-block;
+    }
+
+    &:focus-within span.label.label-icon-padding {
+        left: 0;
+    }
+
+
+    &:focus-within span.label,
+    span.label.hasvalue {
+        top: 2px;
+        opacity: 1;
+        font-size: 10px;
+        color: $dark-grey;
+    }
+
+    &.label-success {
+
+        &:focus-within span,
+        span.hasvalue {
+            color: $success;
+        }
+
+        input,
+        textarea {
+            &:focus {
+                border-bottom: 3px solid $success;
+            }
+        }
+    }
+
+    &.label-error {
+        color: $error;
+
+        &:focus-within span,
+        span.hasvalue {
+            color: $error;
+        }
+
+        input,
+        textarea {
+            &:focus {
+                border-bottom: 3px solid $error;
+            }
+        }
+    }
+
+    .error-message {
+        position: relative;
+        display: block;
+        font-size: 14px;
+        top: 0;
+        left: 2px;
+        color: $error;
+    }
+
+    input,
+    textarea {
+        height: 47px;
+        line-height: 20px;
+        width: 100%;
+        background: $black;
+        outline: none;
+        border: 0;
+        border-bottom: 4px solid $black;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 16px;
+        padding-bottom: 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: $light-grey;
+        box-sizing: border-box;
+
+        &.error,
+        &.invalid {
+            border: 1px solid $error;
+            color: $error;
+        }
+
+        &:hover {
+            outline: none;
+            box-shadow: 0px 3px 8px rgba(62, 27, 7, 0.1);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 3px solid $purple;
+            box-shadow: none;
+        }
+    }
+
+    // Additional styles for textarea to adjust its height
+    textarea {
+        height: auto;
+        min-height: 24px; // Minimum height to match input
+        padding-bottom: 16px; // Adjust padding to match design
+        resize: vertical; // Allow vertical resizing, change as needed
+
+        font: inherit;
+        font-size: 18px;
+    }
+
+    input+.error-message,
+    textarea+.error-message {
+        margin-top: 5px;
+        display: block;
+        color: $error;
+
+        &:before {
+            content: "❌ "; // Error icon placeholder
+        }
+    }
+}

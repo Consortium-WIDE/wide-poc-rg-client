@@ -1,0 +1,26 @@
+<div class="landing-page">
+    <div class="content">
+        <div class="logo">
+            <img src="assets/svg/raidguild_logo.svg" alt="Raid Guild Logo" />
+        </div>
+        <div class="text-content">
+            <h2>Prove your membership at RaidGuild DAO to get access to WIDE Dungeon Master.</h2>
+            <p>Click on 'Create WIDE Account' to upload your RaidGuild credentials for verification. Then return to this
+                page to verify your eligibility in order to gain access to your member profile and the ongoing Raids.
+            </p>
+        </div>
+        <div class="checkbox">
+            <app-rgdm-checkbox [(checked)]="wideConfirmation"
+                label="I have created an account on WIDE and uploaded my DAO membership proof."></app-rgdm-checkbox>
+        </div>
+        <div class="buttons">
+            <ng-container *ngIf="!wideConfirmation">
+                <button (click)="goToWide()">Set up WIDE</button>
+            </ng-container>
+            <ng-container *ngIf="wideConfirmation">
+                <button (click)="beginPresentationFlow()">Continue with WIDE</button>
+                <button (click)="beginSignInFlow()" class="btn-alt">Member Login</button>
+            </ng-container>
+        </div>
+    </div>
+</div>

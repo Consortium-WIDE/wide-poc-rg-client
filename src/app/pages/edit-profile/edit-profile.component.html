@@ -1,0 +1,55 @@
+<div class="content">
+    <form autocomplete="off">
+        <div class="form">
+            <h2>Edit information displayed in your profile</h2>
+            <div class="form-input">
+                <app-rgdm-input id="memberName" name="memberName" label="Member Name"
+                    [(ngModel)]="profile.memberName"></app-rgdm-input>
+            </div>
+            <div class="form-input">
+                <app-rgdm-input id="bio" name="bio" label="Bio" [(ngModel)]="profile.bio"
+                    [multiline]="true"></app-rgdm-input>
+            </div>
+            <div class="form-input">
+                <app-rgdm-dropdown [(ngModel)]="profile.guildClass" id="guildClass" name="guildClass"
+                    [options]="guild_classes" label="Guild Class" prompt="Please select an option..."></app-rgdm-dropdown>
+            </div>
+            <div class="form-input">
+                <app-rgdm-dropdown [(ngModel)]="profile.primarySkill" id="primarySkill" name="primarySkill"
+                    [options]="skills" label="Primary Skill" prompt="Please select an option..."></app-rgdm-dropdown>
+            </div>
+            <div class="form-input">
+                <app-rgdm-dropdown [(ngModel)]="profile.secondarySkill" id="secondarySkill" name="secondarySkill"
+                    [options]="skills" label="Secondary Skill" prompt="Please select an option..."></app-rgdm-dropdown>
+            </div>
+            <div class="form-input col-2">
+                <div class="form-input-sub">
+                    <app-rgdm-input id="githubHandle" name="githubHandle" label="Github" [(ngModel)]="profile.github" iconUrl="assets/svg/icons/github.svg"></app-rgdm-input>
+                </div>
+                <div class="form-input-sub">
+                    <app-rgdm-input id="telegramHandle" name="telegramHandle" label="Telegram" [(ngModel)]="profile.telegram" iconUrl="assets/svg/icons/telegram.svg"></app-rgdm-input>
+                </div>
+            </div>
+            <div class="form-input col-2">
+                <div class="form-input-sub w-70">
+                    <app-rgdm-input id="discordHandle" [disabled]="true" name="discordHandle" label="Discord" [(ngModel)]="profile.discord" iconUrl="assets/svg/icons/discord.svg"></app-rgdm-input>
+                </div>
+                <div class="form-input-sub">
+                    <button (click)="getDiscordHandleFromWide()">Add with WIDE</button>
+                </div>
+            </div>
+            <div class="form-input col-2">
+                <div class="form-input-sub w-70">
+                    <app-rgdm-input id="email" [disabled]="true"  name="email" label="Email" [(ngModel)]="profile.email" iconUrl="assets/svg/icons/email-outline.svg"></app-rgdm-input>
+                </div>
+                <div class="form-input-sub">
+                    <button (click)="getMailFromWide()">Add with WIDE</button>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn-alt" (click)="updateProfile()">Update Profile</button>
+            <button class="btn-alt no-border" (click)="reject()">Reject</button>
+        </div>
+    </form>
+</div>

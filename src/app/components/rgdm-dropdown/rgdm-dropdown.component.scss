@@ -1,0 +1,95 @@
+@import '_imports';
+
+.dropdown {
+    display: inline-grid;
+    min-width: 250px;
+    width: 100%;
+    position: relative;
+
+    .dropdown-selected {
+        display: inline-grid;
+        position: relative;
+        height: 47px;
+        line-height: 20px;
+        align-items: center;
+        background: $black;
+        padding-left: 15px;
+        padding-right: 35px;
+        border-radius: 5px;
+        text-align: left;
+        cursor: pointer;
+        box-sizing: border-box;
+        
+        &.selected {
+            color: $light-grey;
+        }
+
+        &.open {
+            border: 1px solid $purple;
+
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        label.label {
+            color: $dark-grey;
+            font-size: 10px;
+        }
+
+        .dropdown-text{
+            position: relative;
+            bottom: 3px;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: $dark-grey;
+            right: 20px;
+            clip-path: path('M0.418467 3.17254L4.07416 6.82824C4.62463 7.37871 5.51386 7.37871 6.06433 6.82824L9.72003 3.17254C10.6092 2.28332 9.97409 0.758934 8.71788 0.758934H1.40649C0.150289 0.758934 -0.470756 2.28332 0.418467 3.17254Z');
+
+            &.open {
+                clip-path: path('M0.418467 4.58637L4.07416 0.930676C4.62463 0.380204 5.51386 0.380204 6.06433 0.930676L9.72003 4.58637C10.6092 5.47559 9.97409 6.99998 8.71788 6.99998H1.40649C0.150289 6.99998 -0.470756 5.47559 0.418467 4.58637Z');
+            }
+        }
+    }
+
+    ul.dropdown-list {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        top: 44px;
+        background: $black;
+        list-style: none;
+        box-shadow: 0px 3px 8px rgba(62, 27, 7, 0.1);
+        cursor: pointer;
+        z-index: 999;
+        border: 1px solid $purple;
+        border-top: none;
+        box-sizing: border-box;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        li {
+            min-height: 38px;
+            display: grid;
+            align-items: center;
+            padding-right: 15px;
+            color: $light-grey;
+            text-align: left;
+            padding-left:15px;
+
+            &.selected {
+                font-weight: 700;
+            }
+            
+            &:hover {
+                background: $purple;
+                color: $black;
+                font-weight: 700;
+            }
+        }
+    }
+}

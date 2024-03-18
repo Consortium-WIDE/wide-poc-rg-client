@@ -1,0 +1,10 @@
+<div class="rgdm-input" [ngClass]="getStyle()">
+    <label>
+        <img *ngIf="iconUrl" [src]="iconUrl" class="input-icon" alt="Input icon">
+        <span class="label" [ngClass]="{'hasvalue': (value && value.length > 0), 'label-icon-padding': iconUrl}">{{ label }}</span>
+        <input *ngIf="!multiline" type="text" [id]="id" [name]="name" [(ngModel)]="value" [ngClass]="{'hasvalue': (value && value.length > 0), 'with-icon': iconUrl}" (input)="onInput($event)" [disabled]="disabled">
+        <!-- Textarea remains unchanged -->
+        <textarea *ngIf="multiline" [id]="id" [name]="name" [ngClass]="(value && value.length > 0) ? 'hasvalue' : ''" (input)="onInput($event)">{{value}}</textarea>
+    </label>
+    <span *ngIf="errorMessage.length > 0" class="error-message"><i class="mdi mdi-close-circle"></i>{{errorMessage}}</span>
+</div>

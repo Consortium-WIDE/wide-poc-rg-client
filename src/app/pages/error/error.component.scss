@@ -1,0 +1,30 @@
+.content {
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+    height: 100vh; /* Example height; adjust as needed */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-top: 0;
+    }
+
+    .content-center {
+        margin-top: -20vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        .icon {
+            font-size: 28px;
+        }
+
+        .text {
+            margin-left: 15px;
+            max-width: 475px;
+        }
+    }
+}

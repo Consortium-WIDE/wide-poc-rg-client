@@ -1,0 +1,10 @@
+<nav *ngIf="showMenu" class="top-level-menu">
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.path"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: false}">{{item.title}}</a>
+      </li>
+    </ul>
+  </nav>
+  

@@ -1,0 +1,38 @@
+.landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .content {
+        margin-top: -20vh;
+
+        max-width: 600px;
+
+        .logo {
+            margin: 80px;
+
+            img {
+                width: 200px;
+            }
+        }
+
+        .text-content {
+            text-align: justify;
+            p {
+                text-align: left;
+            }
+        }
+
+        .checkbox {
+            margin-top: 40px;
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+    }
+}

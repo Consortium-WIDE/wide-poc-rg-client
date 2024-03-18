@@ -1,0 +1,15 @@
+@import 'imports';
+
+.content.main {
+    padding: 40px 85px 40px 85px;
+
+    .header {
+        display: flex;
+        gap: 100px;
+        .raidguild-logo {
+            img {
+                width: 145px;
+            }
+        }
+    }
+}

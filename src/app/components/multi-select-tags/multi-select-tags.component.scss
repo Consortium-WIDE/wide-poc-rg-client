@@ -1,0 +1,82 @@
+@import '_imports';
+
+.container {
+    .selected-tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px; // Adjust as necessary
+        padding: 15px 0;
+        justify-content: center;
+
+        .tag {
+            display: flex;
+            align-items: center;
+            background: $rgpink;
+            color: $light-grey;
+            border-radius: 3px;
+            padding: 5px 10px; // Adjust as necessary
+            font-size: 14px; // Match input font size if needed
+            cursor: pointer;
+        }
+    }
+
+    .multi-select-tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px; // Adjust the space between tags
+        background: $black;
+        border: 1px solid $purple;
+        border-radius: 5px;
+        padding: 0 15px; // Consistent padding with inputs
+        box-sizing: border-box;
+        position: relative;
+
+        input {
+            flex-grow: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: $light-grey;
+            font-size: 14px; // Keep font size consistent with inputs
+            line-height: 20px;
+            height: 47px; // Keep height consistent with inputs
+            padding: 0; // No padding necessary inside the tags area
+
+            &:focus {
+                box-shadow: none; // No focus shadow, following the input style
+            }
+        }
+
+        .filtered-tags {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: $black;
+            border: 1px solid $purple;
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0px 3px 8px rgba(62, 27, 7, 0.1);
+            max-height: 200px; // Set a max-height for the dropdown and make it scrollable
+            overflow-y: auto;
+            z-index: 999;
+            cursor: pointer;
+
+            li {
+                padding: 10px 15px; // Consistent padding with dropdown items
+                color: $light-grey;
+
+                &:hover {
+                    background: $purple;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
