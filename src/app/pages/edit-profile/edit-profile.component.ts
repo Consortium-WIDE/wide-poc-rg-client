@@ -90,8 +90,6 @@ export class EditProfileComponent {
   async updateWideCredential(): Promise<void> {
     let wideWindow = window.open(`${environment.wideUri}/update/start`, 'WIDE', 'width=600, height=800');
     
-    debugger;
-
     const wideCredentialId = this.profile.wideCredentialId;
 
     //Clone profile to payload and remove keys (these cannot be updated anyway)
@@ -132,7 +130,7 @@ export class EditProfileComponent {
             this.profile = await firstValueFrom(this.raidGuildDataService.updateUser(this.profile));
             this.toastNotificationService.success('User Profile', 'User profile has been successfully updated.');
 
-            this.router.navigateByUrl('/profile/edit');
+            this.router.navigateByUrl('/profile');
           }
         }
       });

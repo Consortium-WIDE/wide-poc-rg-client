@@ -27,8 +27,16 @@
                 cursor: pointer;
             }
 
-            .toggle-box {
+            .status-box {
                 margin-left: auto;
+
+                .status {
+                    border: 1px solid $purple;
+                    border-radius: 5px;
+                    padding: 5px;
+                    color: $purple;
+                    padding-bottom: 6px;
+                }
             }
         }
 

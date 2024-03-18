@@ -1,10 +1,7 @@
 <div class="content">
     <div class="header">
         <div class="title">
-            <h2>Raids (2)</h2>
-        </div>
-        <div class="buttons">
-            <button (click)="newRaid()">Create a Raid</button>
+            <h2>Raids ({{raids.length ?? 0}})</h2>
         </div>
     </div>
     <div class="filters">
@@ -19,6 +16,9 @@
             <div class="input">
                 <app-rgdm-dropdown [(ngModel)]="filters.sort" id="sortFilter" name="sortFilter" [options]="sortFilters" label="" prompt="Show All" (ngModelChange)="refresh()"></app-rgdm-dropdown>
             </div>
+        </div>
+        <div class="buttons">
+            <button (click)="newRaid()">Create a Raid</button>
         </div>
     </div>
     <div class="raids">

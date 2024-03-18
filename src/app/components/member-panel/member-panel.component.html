@@ -5,8 +5,10 @@
     <div class="member-panel" *ngIf="profile">
         <div class="header">
             <h2>{{profile.memberName ?? 'Member Name'}}</h2>
-            <div class="toggle-box">
-                <app-rgdm-toggle-box [disabled]="true" [(checked)]="profile.isCurrentlyRaiding" [label]="profile.isCurrentlyRaiding ? 'Raiding' : 'Not Raiding'" labelPosition="left"></app-rgdm-toggle-box>
+            <div class="status-box">
+                <div class="status">
+                    {{profile.isCurrentlyRaiding ? 'Raiding' : 'Not Raiding'}}
+                </div>
             </div>
         </div>
         <div class="bio">

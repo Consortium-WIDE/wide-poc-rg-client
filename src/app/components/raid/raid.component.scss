@@ -21,25 +21,39 @@
 
         .status {
             margin-left: auto;
+
+            border: 1px solid $purple;
+            color: $purple;
+            padding: 5px;
+            border-radius:5px;
+
+            line-height: 18px;
+            padding-bottom: 6px;
         }
     }
 
     .summary {
         pre {
             font-family: 'lato';
+            color: $light-grey;
         }
     }
 
     .tags {
         margin-top: 25px;
 
+        color: $light-grey;
+        
         b {
-            color: $light-grey;
+            color: $dark-grey;
         }
     }
 
     .members {
+        color: $light-grey;
+
         h4 {
+            color: $dark-grey;
             margin-bottom: 5px;
         }
     }
