@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RgdmToggleBoxComponent } from '../rgdm-toggle-box/rgdm-toggle-box.component';
 import { ToastNotificationService } from '../../services/toast-notification.service';
+import { Router } from '@angular/router';
+import { RaidguildDataService } from '../../services/raidguild-data.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-member-panel',
@@ -10,20 +13,20 @@ import { ToastNotificationService } from '../../services/toast-notification.serv
   templateUrl: './member-panel.component.html',
   styleUrl: './member-panel.component.scss'
 })
-export class MemberPanelComponent {
-  @Input() isRaiding: boolean = false
+export class MemberPanelComponent implements OnInit {
+  profile: any = null;
 
-  constructor(private toastNotificationService: ToastNotificationService) { }
+  constructor(private router: Router, private raidGuildDataService: RaidguildDataService, private toastNotificationService: ToastNotificationService) { }
 
-  editMember(): void {
-    alert('editMember!');
-  }
-
-  editBio(): void {
-    alert('editBio!');
+  async ngOnInit(): Promise<void> {
+    try {
+      this.profile = await firstValueFrom(this.raidGuildDataService.getUser());
+    } catch (err) {
+      this.toastNotificationService.error('User Profile', 'Failed to retrieve User Profile due to an Internal Error.');
+    }
   }
 
   editProfile(): void {
-    this.toastNotificationService.success('Test Notification', 'Hello World this is a test toast!');
+    this.router.navigateByUrl('profile/edit');
   }
 }

@@ -1,0 +1,23 @@
+<div class="content">
+    <form autocomplete="off">
+        <div class="form">
+            <h2>Add information about your Raid</h2>
+            <div class="form-input">
+                <app-rgdm-input id="raidName" name="raidName" label="Raid Name" [(ngModel)]="raid.raidName"></app-rgdm-input>
+            </div>
+            <div class="form-input">
+                <app-rgdm-input id="summary" name="summary" label="Summary" [(ngModel)]="raid.summary" [multiline]="true"></app-rgdm-input>
+            </div>
+            <div class="form-input">
+                <app-rgdm-dropdown [(ngModel)]="raid.status" id="raidStatus" name="raidStatus" [options]="raidStatuses" label="Raid Status" prompt="Please select an option..."></app-rgdm-dropdown>
+            </div>
+            <div class="form-input">
+                <app-multi-select-tags [allTags]="guild_classes" (selectedTagsChange)="onSelectedTagsChange($event)"></app-multi-select-tags>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn-alt" (click)="createRaid()">Create Raid</button>
+            <button class="btn-alt no-border" (click)="reject()">Discard</button>
+        </div>
+    </form>
+</div>

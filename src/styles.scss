@@ -54,9 +54,24 @@ button {
         border: 1px solid $rgpink;
         color: $rgpink;
         background: transparent;
+
+        &.no-border {
+            border: none;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    }
+
+    &.btn-sm {
+        padding: 5px 25px;
+    }
+
+    &.btn-purple {
+        background: $purple;
     }
 }
 
+/* INPUTS */
 
 input[type="checkbox"] {
     background: $rgpink;

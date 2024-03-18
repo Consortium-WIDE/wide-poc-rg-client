@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
 import { WideService } from '../../services/wide.service';
 import { RaidguildDataService } from '../../services/raidguild-data.service';
 import { CommonModule } from '@angular/common';
 import { RgdmCheckboxComponent } from '../../components/rgdm-checkbox/rgdm-checkbox.component';
+import { MenuService } from '../../services/menu.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -18,18 +20,15 @@ export class LandingComponent implements OnInit {
   userId: string | null = null;
   wideConfirmation: boolean = true; //TODO: Change to false before deploy
 
-  constructor(private router: Router, private wideService: WideService, private raidGuildDataService: RaidguildDataService) { }
+  constructor(private router: Router, private wideService: WideService, private raidGuildDataService: RaidguildDataService, private menuService: MenuService) { }
 
-  ngOnInit(): void {
-    this.raidGuildDataService.getAuthStatus().subscribe((status: any) => {
-      if (status) {
-        this.userId = status.userId;
-
-        if (this.userId) {
-          this.router.navigateByUrl('/profile', { state: { userId: this.userId } });
-        }
-      }
-    });
+  async ngOnInit(): Promise<void> {
+    this.menuService.setShowMenu(false);
+    const response = await firstValueFrom(this.raidGuildDataService.getUser());
+    
+    if (response) {
+      this.router.navigateByUrl('/profile');
+    }
   }
 
   beginPresentationFlow(): void {

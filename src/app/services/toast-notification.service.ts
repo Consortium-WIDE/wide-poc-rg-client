@@ -29,16 +29,13 @@ export class ToastNotificationService {
   // ... similarly for other types like 'success', 'error', etc.
 
   public showToast(title: string, message: string, type: string, duration: number) {
-    console.log('A');
     if (this.viewContainerRef) {
-      console.log('B');
       const componentRef = this.viewContainerRef.createComponent(ToastComponent);
       componentRef.instance.title = title;
       componentRef.instance.message = message;
       componentRef.instance.type = type;
       componentRef.instance.duration = duration;
       componentRef.instance.show = true;
-      console.log('C');
     }
   }
 }

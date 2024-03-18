@@ -1,0 +1,12 @@
+<div class="dropdown">
+    <div class="dropdown-selected" [ngClass]="isOpen ? 'open' : selectedValue ? 'selected' : ''" (click)="toggleDropdown()">
+        <label class="label">{{label}}</label>
+        <span class="dropdown-text">{{ selectedValue || prompt }}</span>
+        <i class="arrow" [ngClass]="isOpen ? 'open' : ''"></i>
+    </div>
+    <ul *ngIf="isOpen" class="dropdown-list">
+        <li *ngFor="let option of options" (click)="selectOption(option)" [ngClass]="selectedValue == option ? 'selected' : ''">
+            {{ option }}
+        </li>
+    </ul>
+</div>

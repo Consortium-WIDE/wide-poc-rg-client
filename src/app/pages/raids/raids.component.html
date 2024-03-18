@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="header">
+        <div class="title">
+            <h2>Raids (2)</h2>
+        </div>
+        <div class="buttons">
+            <button (click)="newRaid()">Create a Raid</button>
+        </div>
+    </div>
+    <div class="filters">
+        <div class="filter">
+            <label>Raid Status</label>
+            <div class="input">
+                <app-rgdm-dropdown [(ngModel)]="filters.status" id="statusFilter" name="statusFilter" [options]="statusFilters" label="" prompt="Show All" (ngModelChange)="refresh()"></app-rgdm-dropdown>
+            </div>
+        </div>
+        <div class="filter">
+            <label>Sort</label>
+            <div class="input">
+                <app-rgdm-dropdown [(ngModel)]="filters.sort" id="sortFilter" name="sortFilter" [options]="sortFilters" label="" prompt="Show All" (ngModelChange)="refresh()"></app-rgdm-dropdown>
+            </div>
+        </div>
+    </div>
+    <div class="raids">
+        <div class="no-raids" *ngIf="!raids || raids.length == 0">
+            <p>There are no raids in the system that meet the serach criteria.</p>
+        </div>
+        <div class="raid" *ngFor="let raid of raids">
+            <app-raid [raid]="raid" [userId]="userId" [showDebug]="false"></app-raid>
+        </div>
+    </div>
+</div>

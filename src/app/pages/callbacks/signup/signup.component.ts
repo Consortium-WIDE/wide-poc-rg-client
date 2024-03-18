@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RaidguildDataService } from '../../../services/raidguild-data.service';
 import { WideService } from '../../../services/wide.service';
-import { environment } from '../../../../environments/environment.development';
+import { environment } from '../../../../environments/environment';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -28,8 +28,6 @@ export class SignupComponent implements OnInit {
 
       if (token) {
         this.retrievedPresentation = await firstValueFrom(this.raidGuildDataService.getDataByToken(token));
-
-        console.log('retrievedPresentation', this.retrievedPresentation);
 
         let payload: any =
         {
@@ -100,7 +98,7 @@ export class SignupComponent implements OnInit {
 
             this.raidGuildDataService.setAuthStatus(payload.data.id);
 
-            this.router.navigateByUrl('/profile', { state: { userId: payload.data.id } });
+            this.router.navigateByUrl('/profile', { state: { userId: payload.data.dungeonMasterUserId } });
           }
 
           if (event.data.status === 'already_exists') {

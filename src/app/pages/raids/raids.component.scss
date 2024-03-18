@@ -1,0 +1,22 @@
+@import 'imports';
+
+.content {
+    .header {
+        display: flex;
+        align-items: center;
+        
+        .buttons {
+            margin-left: auto;
+
+            button {
+                padding: 10px 25px 10px 25px;
+            }
+        }
+    }
+
+    .filters {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+}

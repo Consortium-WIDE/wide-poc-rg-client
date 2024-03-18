@@ -37,6 +37,50 @@ export const environment = {
             }
         }
     },
+    wideClaimEmail: {
+        domain: 'raidguild.org',
+        serverPresentationUrl: 'http://localhost:4200/present',
+        wideApiUri: 'http://localhost:3000',
+        wideConfig: {
+            "rpName": "Raid Guild Dungeon Master (Profile Editor)",
+            "serverApiEndpoint": 'http://localhost:3500/wide/registerProfileData/email',
+            "sourceUri": "http://localhost:4500",
+            "redirectUri": "http://localhost:4500/profile/edit",
+            "logoUri": "http://localhost:4500/assets/svg/raidguild_logo.svg",
+            "iconUri": "http://localhost:4500/assets/icon.png",
+            "requireMessageSignature": true,
+            "credential": {
+                "type": ["oauth"]
+            },
+            "require": {
+                "plainText": [
+                    "email"
+                ]
+            }
+        }
+    },
+    wideClaimDiscord: {
+        domain: 'raidguild.org',
+        serverPresentationUrl: 'http://localhost:4200/present',
+        wideApiUri: 'http://localhost:3000',
+        wideConfig: {
+            "rpName": "Raid Guild Dungeon Master (Profile Editor)",
+            "serverApiEndpoint": 'http://localhost:3500/wide/registerProfileData/discord',
+            "sourceUri": "http://localhost:4500",
+            "redirectUri": "http://localhost:4500/profile/edit",
+            "logoUri": "http://localhost:4500/assets/svg/raidguild_logo.svg",
+            "iconUri": "http://localhost:4500/assets/icon.png",
+            "requireMessageSignature": true,
+            "credential": {
+                "type": ["discord", "oauth"]
+            },
+            "require": {
+                "plainText": [
+                    "username"
+                ]
+            }
+        }
+    },
     popupConfig: {
         sourceName: 'Raid Guild Dungeon Master',
         logoUri: 'http://localhost:4500/assets/svg/raidguild_logo.svg'

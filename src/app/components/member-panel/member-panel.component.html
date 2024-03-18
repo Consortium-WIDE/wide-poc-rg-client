@@ -1,40 +1,45 @@
 <div class="profile-wrapper">
-    <div class="member-panel">
+    <!-- <div>
+        <pre><p>{{this.profile | json}}</p></pre>
+    </div> -->
+    <div class="member-panel" *ngIf="profile">
         <div class="header">
-            <h2>Member Name <i (click)="editMember()" class="mdi mdi-pencil-outline text-primary"></i></h2>
+            <h2>{{profile.memberName ?? 'Member Name'}}</h2>
             <div class="toggle-box">
-                <app-rgdm-toggle-box [(checked)]="isRaiding" [label]="isRaiding ? 'Raiding' : 'Not Raiding'" labelPosition="left"></app-rgdm-toggle-box>
+                <app-rgdm-toggle-box [disabled]="true" [(checked)]="profile.isCurrentlyRaiding" [label]="profile.isCurrentlyRaiding ? 'Raiding' : 'Not Raiding'" labelPosition="left"></app-rgdm-toggle-box>
             </div>
         </div>
         <div class="bio">
             <div class="label">
-                <p>Add some information about yourself here.</p>
-                <i (click)="editBio()" class="mdi mdi-pencil-outline text-primary"></i>
+                <p>{{profile.bio ?? 'Add some information about yourself here.'}}</p>
             </div>
         </div>
         <hr />
         <div class="item role">
-            <b>Member Role:</b> No Role
+            <b>Guild Class:</b>&nbsp;<span>{{profile.guildClass ?? 'No Role'}}</span>
         </div>
         <div class="item skills">
-            <b>Skills:</b> No skills indicated
+            <b>Primary skill:</b>&nbsp;<span>{{profile.primarySkill ?? 'No Primary Skill'}}</span>
+        </div>
+        <div class="item skills">
+            <b>Secondary skill:</b>&nbsp;<span>{{profile.secondarySkill ?? 'No Secondary Skill'}}</span>
         </div>
         <hr />
-        <div class="item icon-item discord">
-            <i class="icon"><img src="assets/svg/icons/discord.svg" /></i>
-            <span class="value">No handle</span>
-        </div>
         <div class="item icon-item github">
             <i class="icon"><img src="assets/svg/icons/github.svg" /></i>
-            <span class="value">No handle</span>
+            <span class="value">{{profile.github ?? 'No handle'}}</span>
         </div>
         <div class="item icon-item telegram">
             <i class="icon"><img src="assets/svg/icons/telegram.svg" /></i>
-            <span class="value">No handle</span>
+            <span class="value">{{profile.telegram ?? 'No handle'}}</span>
+        </div>
+        <div class="item icon-item discord">
+            <i class="icon"><img src="assets/svg/icons/discord.svg" /></i>
+            <span class="value">{{profile.discord ?? 'No handle'}}</span>
         </div>
         <div class="item icon-item mail">
             <i class="icon"><img src="assets/svg/icons/email-outline.svg" /></i>
-            <span class="value">No handle</span>
+            <span class="value">{{profile.email ?? 'No handle'}}</span>
         </div>
     </div>
     <div class="buttons">

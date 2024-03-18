@@ -1,0 +1,33 @@
+<div class="content" *ngIf="raid">
+
+    <div class="debug" *ngIf="showDebug">
+        <p>------</p>
+        <pre><p>{{raid | json}}</p></pre>
+        <p>------</p>
+    </div>
+
+    <div class="header">
+        <div class="name">
+            <h3>{{raid.raidName}}</h3>
+        </div>
+        <div class="status">
+            <b>Status: </b>{{raid.status}}
+        </div>
+    </div>
+    <div class="summary">
+        <pre><p>{{raid.summary}}</p></pre>
+    </div>
+    <div class="tags">
+        <span><b>Tags: </b>{{raid.selectedTags.join(', ')}}</span>
+    </div>
+    <div class="members">
+        <h4>Members ({{this.raid.members.length ?? 0}})</h4>
+        <span *ngIf="!raid.members">No members assigned to raid</span>
+        <span *ngIf="raid.members">{{getRaidMembers()}}</span>
+    </div>
+    <div class="buttons" *ngIf="raid.status != 'Ended'">
+        <button class="btn-sm" *ngIf="!isRaiding()" (click)="joinRaid(raid.id)">Join Raid</button>
+        <button class="btn-sm" *ngIf="isCleric()" (click)="endRaid(raid.id)">End Raid</button>
+        <button class="btn-sm btn-purple" *ngIf="!isCleric() && isRaiding()" (click)="leaveRaid(raid.id)">Leave Raid</button>
+    </div>
+</div>

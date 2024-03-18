@@ -1,0 +1,52 @@
+@import 'imports';
+
+.content {
+    background: $black;
+    padding: 10px 25px;
+    border-radius: 10px;
+
+    margin-top: 50px;
+
+    padding-bottom: 35px;
+
+    .header {
+        display: flex;
+        align-items: center;
+
+        .name {
+            h3 {
+                color: $rgpink;
+            }
+        }
+
+        .status {
+            margin-left: auto;
+        }
+    }
+
+    .summary {
+        pre {
+            font-family: 'lato';
+        }
+    }
+
+    .tags {
+        margin-top: 25px;
+
+        b {
+            color: $light-grey;
+        }
+    }
+
+    .members {
+        h4 {
+            margin-bottom: 5px;
+        }
+    }
+
+    .buttons {
+        margin-top: 25px;
+        display: flex;
+        gap: 25px;
+    }
+}
