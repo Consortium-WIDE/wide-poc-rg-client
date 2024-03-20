@@ -9,9 +9,6 @@
                 <app-rgdm-input id="summary" name="summary" label="Summary" [(ngModel)]="raid.summary" [multiline]="true"></app-rgdm-input>
             </div>
             <div class="form-input">
-                <app-rgdm-dropdown [(ngModel)]="raid.status" id="raidStatus" name="raidStatus" [options]="raidStatuses" label="Raid Status" prompt="Please select an option..."></app-rgdm-dropdown>
-            </div>
-            <div class="form-input">
                 <app-multi-select-tags [allTags]="guild_classes" (selectedTagsChange)="onSelectedTagsChange($event)"></app-multi-select-tags>
             </div>
         </div>
