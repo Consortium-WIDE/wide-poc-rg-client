@@ -39,6 +39,9 @@ export class CreateRaidComponent implements OnInit {
   }
 
   async createRaid(): Promise<void> {
+    //hardcode when creating raid
+    this.raid.status = 'Raiding';
+
     if (this.raid && this.raid.raidName && this.raid.summary && this.raid.status) {
       await firstValueFrom(this.raidGuildDataService.createRaid(this.raid));
       this.router.navigateByUrl('raids');

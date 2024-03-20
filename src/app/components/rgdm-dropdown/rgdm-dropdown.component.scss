@@ -71,6 +71,8 @@
         box-sizing: border-box;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
+        max-height: 250px;
+        overflow: auto;
 
         li {
             min-height: 38px;
